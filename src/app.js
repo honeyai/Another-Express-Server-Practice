@@ -10,6 +10,10 @@ const discordStrategy = require('./strategies/discordStrategy');
 /*----------  Routes  ----------*/
 const authRouter = require('./routes/auth');
 
+/*----------  Database  ----------*/
+const db = require('./database/database');
+db.then(() => console.log("Connected to mongoDB.")).catch(error => console.error("We have a problem!", error));
+
 app.use(session({
   secret: '9470840216',
   cookie: {
